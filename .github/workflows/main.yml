@@ -23,5 +23,4 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: dwitabputri/mjs:latest
-        file: .
+        tags: dwitabputri/mjs-tes:latest
