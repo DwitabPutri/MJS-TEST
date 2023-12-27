@@ -1,3 +1,3 @@
 FROM ubuntu:latest
 
-COPY ./main /app
+COPY . /app
