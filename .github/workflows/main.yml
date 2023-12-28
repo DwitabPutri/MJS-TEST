@@ -34,9 +34,9 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           debug: true
           script: |
-            echo "Before SSH Command"
-            ssh -v PUTRI@192.168.1.11 'docker stop my-container'
-            echo "After SSH Command"
+            # echo "Before SSH Command"
+            # ssh -v PUTRI@192.168.1.11 'docker stop my-container'
+            # echo "After SSH Command"
             docker image pull dwitabputri/mjs-tes:latest
             docker container stop my-container
             docker container rm my-container
