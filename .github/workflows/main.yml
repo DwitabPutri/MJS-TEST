@@ -26,14 +26,14 @@ jobs:
           tags: dwitabputri/mjs-tes:latest
 
       - name: Deploy to Laptop
-        uses: appleboy/ssh-action@master
+        uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           debug: true
-          script: |
+          command: |
             # echo "Before SSH Command"
             # ssh -v PUTRI@192.168.1.11 'docker stop my-container'
             # echo "After SSH Command"
