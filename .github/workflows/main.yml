@@ -32,6 +32,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
+          timeout: 180s
+          debug: true
           script: |
             docker image pull dwitabputri/mjs-tes:latest
             docker container stop my-container
