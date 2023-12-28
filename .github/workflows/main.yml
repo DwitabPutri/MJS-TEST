@@ -25,9 +25,6 @@ jobs:
           push: true
           tags: dwitabputri/mjs-tes:latest
 
-      - name: Deploy to Laptop Y
+      - name: Deploy to Laptop PUTRI
         run: |
-          ssh PUTRI@192.168.1.11 'docker stop my-container'
-          ssh PUTRI@192.168.1.11 'docker rm my-container'
-          ssh PUTRI@192.168.1.11 'docker pull dwitabputri/mjs-tes:latest'
-          ssh PUTRI@192.168.1.11 'docker run -d --name my-container dwitabputri/mjs-tes:latest'
+          ssh PUTRI@192.168.1.11
