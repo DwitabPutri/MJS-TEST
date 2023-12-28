@@ -32,7 +32,7 @@ jobs:
           user: ${{ secrets.SSH_USER }}
           pass: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          run: |
+          command: |
             # echo "Before SSH Command"
             # ssh -v PUTRI@192.168.1.11 'docker stop my-container'
             # echo "After SSH Command"
