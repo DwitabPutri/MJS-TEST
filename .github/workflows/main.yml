@@ -26,5 +26,14 @@ jobs:
           tags: dwitabputri/mjs-tes:latest
 
       - name: Deploy to Laptop PUTRI
-        run: |
-          ssh PUTRI@192.168.1.11
+        uses: appleboy/ssh-action@v1.0.1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            docker image pull dwitabputri/mjs-tes:latest
+            docker container stop my-container
+            docker container rm my-container
+            docker container run -d --name -p 8080:8080 dwitabputri/mjs-tes:latest
