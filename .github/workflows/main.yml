@@ -31,7 +31,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_KEY }}
-          app_port: ${{ secrets.SSH_PORT }}
+          port: ${{ secrets.SSH_PORT }}
           debug: true
           script: |
             echo "Before SSH Command"
