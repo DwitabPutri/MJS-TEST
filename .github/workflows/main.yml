@@ -25,14 +25,13 @@ jobs:
           push: true
           tags: dwitabputri/mjs-tes:latest
 
-      - name: Deploy to Laptop PUTRI
-        uses: appleboy/ssh-action@v1.0.1
+      - name: Deploy to Laptop
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          timeout: 180s
           debug: true
           script: |
             docker image pull dwitabputri/mjs-tes:latest
