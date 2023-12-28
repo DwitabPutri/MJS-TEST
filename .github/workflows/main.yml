@@ -26,17 +26,8 @@ jobs:
           tags: dwitabputri/mjs-tes:latest
 
       - name: Deploy to Laptop
-        uses: fifsky/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          user: ${{ secrets.SSH_USER }}
-          pass: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          command: |
-            # echo "Before SSH Command"
-            # ssh -v PUTRI@192.168.1.11 'docker stop my-container'
-            # echo "After SSH Command"
-            docker image pull dwitabputri/mjs-tes:latest
-            docker container stop my-container
-            docker container rm my-container
-            docker container run -d --name -p 8080:8080 dwitabputri/mjs-tes:latest
+        run: |
+          ssh -p 22 putri@192.168.1.11 'docker stop my-container'
+          ssh -p 22 putri@192.168.1.11 'docker rm my-container'
+          ssh -p 22 putri@192.168.1.11 'docker pull dwitabputri/mjs-tes:latest'
+          ssh -p 22 putri@192.168.1.11 'docker run -d --name my-container -p 8080:8080 dwitabputri/mjs-tes:latest'
