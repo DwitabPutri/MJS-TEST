@@ -26,7 +26,7 @@ jobs:
           tags: dwitabputri/mjs-tes:latest
 
       - name: Deploy to Laptop
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v.0.1.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
